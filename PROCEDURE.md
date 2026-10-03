@@ -18,6 +18,13 @@ Outil de détection : **OWASP ZAP** (scan passif, mode baseline).
 - Docker et Docker Compose installés (`docker --version`,
   `docker compose version`)
 
+- Création du dossier `rapports` dans le dossier du projet
+
+```bash
+mkdir -p rapports
+chmod 777 rapports
+```
+
 ## 3. Étape "AVANT" — détecter la faille
 
 Depuis le dossier du projet :
