@@ -1,0 +1,18 @@
+services:
+  app:
+    build: ./app-corrige
+    container_name: site_corrige
+    ports:
+      - "5000:5000"
+
+  zap:
+    image: zaproxy/zap-stable
+    container_name: zap_scan_apres
+    depends_on:
+      - app
+    volumes:
+      - ./rapports:/zap/wrk:rw
+    command: >
+      zap-baseline.py
+      -t http://app:5000
+      -r rapport_apres.html
